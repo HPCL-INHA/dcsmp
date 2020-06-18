@@ -1,0 +1,9 @@
+# Binary
+dcsmp-*
+*.o
+
+# Dump
+*.dmp
+
+# Visual Studio Code
+.vscode
