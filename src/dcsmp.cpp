@@ -116,6 +116,16 @@ int main(int argc, char *argv[])
 #endif
     cout << "\033[0m" << endl
          << endl;
+#ifdef TEST
+    cout << "MQTT_ACTION_TEST_TOPIC: " << MQTT_ACTION_TEST_TOPIC << endl;
+    cout << "MQTT_EAM_TEST_TOPIC: " << MQTT_EAM_TEST_TOPIC << endl;
+    cout << "MQTT_SENSOR_TEST_TOPIC: " << MQTT_SENSOR_TEST_TOPIC << endl;
+#else
+    cout << "MQTT_ACTION_TOPIC: " << MQTT_ACTION_TOPIC << endl;
+    cout << "MQTT_EAM_TOPIC: " << MQTT_EAM_TOPIC << endl;
+    cout << "MQTT_SENSOR_TOPIC: " << MQTT_SENSOR_TOPIC << endl;
+#endif
+    cout <<endl;
     /* END */
 
     /* DNS Query */
