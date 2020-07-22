@@ -15,3 +15,11 @@ make debug # 디버그 메세지 출력 포함 빌드
 make selft-test # server-less 테스트 용 빌드
 make clean # 지우기. 지금으로썬 매번 새로 make 수행할 때 마다 돌려야 함.
 ```
+
+3. 소스 구조
+```
+1. dcsmp.cpp: main() 진입점 정의
+2. userdata.cpp/userdata.hpp: user 정의
+3. xyz.cpp/xyz.hpp: 벡터 계산 함수
+4. dc_mqtt.cpp/dc_mqtt.hpp: 디지털 컴패니언 MQTT 관련 함수 및 헤더
+```
