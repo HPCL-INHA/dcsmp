@@ -244,13 +244,13 @@ int main(int argc, char *argv[])
             sensor_msg_data.append(entry);
         }
         sensor_msg_root[MQTT_SENSOR_MSG_KEYS.DATA] = sensor_msg_data;
-        sensor_msg_root[MQTT_SENSOR_MSG_KEYS.STATE] = (test_max_index + 1 == TEST_NUM_SENSOR_DATA_ENTRIES) ? "1" : "0";
         /* END */
 
         /* Heart Rate & Step Counter Generation */
         sensor_msg_root[MQTT_SENSOR_MSG_KEYS.HEART_RATE] = to_string(rand() % (TEST_HEART_RATE_LIM + 1));
         test_step_cnt += rand() % (TEST_STEP_GROWTH_LIM + 1);
         sensor_msg_root[MQTT_SENSOR_MSG_KEYS.STEP_CNT] = to_string(test_step_cnt);
+        sensor_msg_root[MQTT_SENSOR_MSG_KEYS.STATE] = "1";
         /* END */
 
         /* Publish Sensor Test Message to MQTT Sensor Test Topic */
