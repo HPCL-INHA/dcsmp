@@ -17,7 +17,7 @@
 using namespace std;
 
 /***************************************************************************/
-#define VERSION "0.9.1"
+#define VERSION "1.0.1"
 
 #ifdef DEBUG
 #define DEBUG_ACCEL_MAG_STR_PRECISION 6
