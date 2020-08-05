@@ -80,7 +80,7 @@ static const char MQTT_MSG_KEY_STATE[] = "state";
 static const char MQTT_MSG_KEY_STEP_CNT[] = "pedoCount";
 static const char MQTT_MSG_KEY_USER_ID[] = "userId";
 
-const char MQTT_ACTION_TOPIC[] = "buddybot/action1/";
+const char MQTT_ACTION_TOPIC[] = "buddybot/action/";
 const char MQTT_ACTION_TEST_TOPIC[] = "buddybot/action_test/";
 enum MQTT_ACTION_SIG_ENUM
 {
