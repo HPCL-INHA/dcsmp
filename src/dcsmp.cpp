@@ -595,6 +595,14 @@ void mosq_message_callback(struct mosquitto *mosq, void *obj, const struct mosqu
         HEART_COND heart_cond;
         heart_cond.datetime = datetime;
         heart_cond.heart_rate = atoi(msg_root[MQTT_SENSOR_MSG_KEYS.HEART_RATE].asString().c_str());
+#ifdef DEBUG
+        cout << "[DEBUG] Current Heartrate is ";
+        if(heart_cond.heart_rate > HEART_RATE_UPPER_THRESHOLD || (heart_cond.heart_rate < HEART_RATE_LOWER_THRESHOLD) && (heart_cond.heart_rate > HEART_RATE_MIN_THRESHOLD))
+            cout << "\033[1;33m";
+        else if(heart_cond.heart_rate <= HEART_RATE_MIN_THRESHOLD)
+            cout << "\033[1;31m";
+        cout << heart_cond.heart_rate << "\033[0mbpm." << endl; 
+#endif
         global_user_data[user_id].storeAbnormalHeartCondition(heart_cond);
         /* END */
     }
