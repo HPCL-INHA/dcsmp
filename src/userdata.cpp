@@ -101,8 +101,10 @@ FALL_PROB_ENUM User::popFallCondition(MQTT_DATETIME &incident_datetime, deque<AC
             case ACTION_NO_SIG:
             case ACTION_NO_SIG_READY:
                 num_next_invalid_action++;
+                break;
             case ACTION_SITTING_FLOOR_TO_LYING:
             case ACTION_SITTING_FLOOR_TO_STANDING:
+            case ACTION_SITTING_FLOOR:
             case ACTION_LYING_TO_SITTING_FLOOR:
             case ACTION_LYING:
             case ACTION_STANDING_TO_SITTING_FLOOR:
