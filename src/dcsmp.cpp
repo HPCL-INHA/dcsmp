@@ -503,6 +503,7 @@ void mosq_message_callback(struct mosquitto *mosq, void *obj, const struct mosqu
         case ACTION_SITTING_CHAIR_TO_STANDING:
             cout << "\033[1;34m";
             break;
+        case ACTION_SITTING_FLOOR:
         case ACTION_SITTING_FLOOR_TO_LYING:
         case ACTION_SITTING_FLOOR_TO_STANDING:
         case ACTION_LYING_TO_SITTING_FLOOR:
