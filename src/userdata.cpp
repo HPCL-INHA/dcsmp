@@ -96,21 +96,20 @@ FALL_PROB_ENUM User::popFallCondition(MQTT_DATETIME &incident_datetime, deque<AC
         size_t num_predicted_action = 0, num_next_invalid_action = 0, num_prev_invalid_action = 0;
         for (size_t index = 0; index < cnt_next_action; index++)
         {
-            switch (action_buffer[cnt_prev_action + index].sig)
+            switch (action_buffer[cnt_prev_action + index].sig) // After falling
             {
             case ACTION_NO_SIG:
             case ACTION_NO_SIG_READY:
                 num_next_invalid_action++;
             case ACTION_SITTING_FLOOR_TO_LYING:
             case ACTION_SITTING_FLOOR_TO_STANDING:
-            case ACTION_SITTING_FLOOR:
             case ACTION_LYING_TO_SITTING_FLOOR:
             case ACTION_LYING:
             case ACTION_STANDING_TO_SITTING_FLOOR:
                 num_predicted_action++;
             }
         }
-        for (size_t index = 0; index < cnt_prev_action; index++)
+        for (size_t index = 0; index < cnt_prev_action; index++) // Before falling
         {
             switch (action_buffer[index].sig)
             {
@@ -123,6 +122,7 @@ FALL_PROB_ENUM User::popFallCondition(MQTT_DATETIME &incident_datetime, deque<AC
             case ACTION_STANDING_TO_SITTING_CHAIR:
             case ACTION_SITTING_CHAIR:
             case ACTION_SITTING_CHAIR_TO_STANDING:
+            case ACTION_SITTING_FLOOR:
                 num_predicted_action++;
             }
         }
